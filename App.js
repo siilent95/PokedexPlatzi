@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView, Platform } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
+import Navigation from "./src/navigation/Navigation";
+import { AuthProvider } from "./src/context/AuthContext";
+
+import "react-native-gesture-handler";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={style.AndroidSafeArea}>
+      <StatusBar style="dark" />
+      <NavigationContainer>
+        <AuthProvider>
+          <Navigation />
+        </AuthProvider>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
+const style = StyleSheet.create({
+  AndroidSafeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "android" ? 45 : 0,
   },
 });
