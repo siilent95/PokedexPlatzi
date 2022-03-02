@@ -1,7 +1,7 @@
+import React from "react";
 import { StyleSheet, View, SafeAreaView, Text, Image } from "react-native";
 import { capitalize } from "lodash";
 import getColorByPokemonType from "../../utils/getColorByPokemonType";
-import React from "react";
 
 export default function Header(props) {
   const { name, order, image, type } = props;
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   order: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 20,
   },
   contentImg: {
     flex: 1,

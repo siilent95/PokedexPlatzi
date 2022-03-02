@@ -1,10 +1,11 @@
-import { StyleSheet, View, Text } from "react-native";
 import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 import { map, capitalize } from "lodash";
 import getColorByPokemonType from "../../utils/getColorByPokemonType";
 
 export default function Type(props) {
   const { types } = props;
+
   return (
     <View style={styles.content}>
       {map(types, (item, index) => (
@@ -24,7 +25,6 @@ export default function Type(props) {
 
 const styles = StyleSheet.create({
   content: {
-    //paddingHorizontal: 20,
     marginTop: 50,
     flexDirection: "row",
     alignItems: "center",

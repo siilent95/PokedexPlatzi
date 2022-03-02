@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
-
 import { getPokemonDetailsApi } from "../api/pokemon";
 import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
@@ -11,8 +10,8 @@ import useAuth from "../hooks/useAuth";
 
 export default function Pokemon(props) {
   const {
-    route: { params },
     navigation,
+    route: { params },
   } = props;
   const [pokemon, setPokemon] = useState(null);
   const { auth } = useAuth();

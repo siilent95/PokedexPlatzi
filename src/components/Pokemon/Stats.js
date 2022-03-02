@@ -1,6 +1,6 @@
+import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { map, capitalize } from "lodash";
-import React from "react";
 
 export default function Stats(props) {
   const { stats } = props;
@@ -72,6 +72,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   bar: {
+    // backgroundColor: "red",
+    // width: "40%",
     height: 5,
     borderRadius: 20,
   },

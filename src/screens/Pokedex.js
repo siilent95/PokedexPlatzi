@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native";
-
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
 import PokemonList from "../components/PokemonList";
 
@@ -31,12 +30,13 @@ export default function Pokedex() {
           image: pokemonDetails.sprites.other["official-artwork"].front_default,
         });
       }
-      //se hace con ... para no poner el arreglo directamente y asi evitar un arreglo dentro de otro arreglo.
+
       setPokemons([...pokemons, ...pokemonsArray]);
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
     <SafeAreaView>
       <PokemonList
